@@ -5,6 +5,8 @@
   <title>Test</title>
 </head>
 <body>
+  <h1>Here are all the HTML5 elements</h1>
+  <br>
   <a href="" onclick="alert(1)">a</a>
   <br>
   <abbr title="abbreviation" contenteditable>abbr</abbr>

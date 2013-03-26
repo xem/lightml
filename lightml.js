@@ -25,7 +25,8 @@ window.onload = function(){
     // Fix HTML entities
     .replace(/&amp;/g, "&")
     .replace(/&gt;/g, ">")
-    
+
+
     // Convert HTML tags (set 1)
     
       // opening/self-closing tags without attributes:  + character code
@@ -36,7 +37,8 @@ window.onload = function(){
       
       // closing tags:  + character code
       .replace(/(.)/g, function(match,p1){return "</" + html_tags_1[p1.charCodeAt(0) - 0x20] + ">"})
-    
+
+
     // Convert HTML tags (set 2)
     
       // opening/self-closing tags without attributes:  + character code
@@ -47,22 +49,22 @@ window.onload = function(){
       
       // closing tags:  + character code
       .replace(/(.)/g, function(match,p1){return "</" + html_tags_2[p1.charCodeAt(0) - 0x20] + ">"})
-    
-    /*
+
+
     // Convert HTML global attributes
-      
+
       // attribute with an equal sign:  + character code
-      .replace(/(.)/g, function(match,p1){return + html_global_attributes[p1.charCodeAt(0) - 0x20] + "="})
-    
+      .replace(/(.)/g, function(match,p1){console.log("BEL", p1, p1.charCodeAt(0), p1.charCodeAt(0) - 0x20);return html_global_attributes[p1.charCodeAt(0) - 0x20] + "="})
+
       // attribute without equal sign:  + character code
-      .replace(/(.)/g, function(match,p1){return html_global_attributes[p1.charCodeAt(0) - 0x20] + " "})
-    */
-      
+      .replace(/(.)/g, function(match,p1){console.log("BS", p1, p1.charCodeAt(0), p1.charCodeAt(0) - 0x20);return html_global_attributes[p1.charCodeAt(0) - 0x20] + " "})
+
+
     // Reset style (optional)
     // .replace("<head>", "<head><style>*{margin:0;padding:0}</style>");
   
   // Write HTML
-  console.log(code_lightml);
-  console.log(code_html);
+  //console.log(code_lightml);
+  //console.log(code_html);
   document.write(code_html);
 }
